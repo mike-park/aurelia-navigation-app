@@ -1,15 +1,14 @@
-export class Welcome {
-  constructor() {
-    this.heading = 'Welcome';
-    this.firstName = 'John';
-    this.lastName = 'Doe';
-  }
+import {Router} from 'aurelia-router';
 
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  welcome() {
-    alert(`Welcome ${this.firstName}`);
+export class App {
+  static inject() { return [Router]; }
+  constructor(router) {
+    this.router = router;
+    this.router.configure(config => {
+      config.title = 'Aurelia';
+      config.map([
+        { route: ['', 'welcome'], moduleId: 'welcome', nav: true, title: 'Welcome' }
+      ])
+    })
   }
 }
