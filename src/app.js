@@ -7,7 +7,8 @@ export class App {
     this.router.configure(config => {
       config.title = 'Aurelia';
       config.map([
-        { route: ['', 'welcome'], moduleId: 'welcome', nav: true, title: 'Welcome' }
+        { route: ['', 'welcome'], moduleId: 'welcome', nav: true, title: 'Welcome' },
+        { route: 'flickr',        moduleId: 'flickr',  nav: true, title: 'Flickr' }
       ])
     })
   }
